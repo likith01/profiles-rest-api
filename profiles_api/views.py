@@ -12,6 +12,7 @@ from rest_framework import viewsets
 from profiles_api import models
 from rest_framework.authentication import TokenAuthentication
 from profiles_api import permissions
+from rest_framework import filters
 
 
 # Create your views here.
@@ -118,3 +119,6 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
     authentication_classes = (TokenAuthentication,)
     permission_classes = (permissions.UpdateOwnProfile,)
+    #search options
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name', 'email',)
