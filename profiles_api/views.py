@@ -14,6 +14,10 @@ from rest_framework.authentication import TokenAuthentication
 from profiles_api import permissions
 from rest_framework import filters
 
+#from video 55
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.settings import api_settings
+
 
 # Create your views here.
 class HelloApiView(APIView):
@@ -122,3 +126,12 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     #search options
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name', 'email',)
+
+
+#===============================================================================
+#from video 55
+
+class UserLoginApiView(ObtainAuthToken):
+    """handle creating user authentication token"""
+    renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
+    
