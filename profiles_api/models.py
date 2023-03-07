@@ -6,7 +6,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.conf import settings
 
 
-#Create your models here.
+
 class UserProfileManager(BaseUserManager):
     """manager for user profiles"""
 
@@ -38,7 +38,7 @@ class UserProfileManager(BaseUserManager):
 
 
 
-
+#Create your models here.
 # ==============================================================================
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """ Database model for users in the system"""

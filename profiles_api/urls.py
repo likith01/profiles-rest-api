@@ -5,7 +5,7 @@ from profiles_api import views
 
 
 
-router = DefaultRouter()
+router = DefaultRouter()#to auto configure(modify, generate) the urls
 router.register('hello-viewset',views.HelloViewSet, base_name= 'hello-viewset')
 #from video 45
 router.register('profile', views.UserProfileViewSet)
